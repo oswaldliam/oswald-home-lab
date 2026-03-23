@@ -31,7 +31,7 @@ Establish a professional server environment for personal learning.
   - [x] Generated OUs for a tiered OU structure in Active Directory Users and Computers to establish different administration levels and organize GPOs
   <img width="618" height="309" alt="image" src="https://github.com/user-attachments/assets/075feb67-4a08-463e-bb80-717b7e02910e" />
 
-### Project 2 Challenges and Resolutions
+  ### Project 2 Challenges and Resolutions
   - **Challenge**: Required a fully qualified forest root domain name, but I didn't have a publicly registered domain name
   - **Resolution**: Research led to using .lab.local; attempted using .home.arpa but this lead to dynamic registrations being generated in the reverse lookup zone rather than the forward lookup zone. 
 
@@ -74,7 +74,7 @@ Establish a professional server environment for personal learning.
   - **Resolution 2**: Research led to updating the virtual infrastructure to an isolated VMware LAN in order to remove interference 
 
 ## Project 5: Client Intergration (Manual Bootstrap)
-- **Status**: In Progress
+- **Status**: Complete
 - **Steps Taken**:
   - [x] Established another Windows Server 2025 on VMware Workstation Pro to serve as the client machine
   - [x] Hardened the OS with Windows updates and the assignment of an administrator's password
@@ -82,9 +82,48 @@ Establish a professional server environment for personal learning.
   - [x] Updated client's virtual infrastructure to the same isolated VMware LAN as the domain controllers
   - [x] Manually assigned a computer name (homelabclient) and joined it to the homelabad.lab.local domain
   - [x] Verified domain name resolution with `nslookup` and confirmed the client identified both domain controllers
-   <img width="524" height="209" alt="image" src="https://github.com/user-attachments/assets/daa81e21-5fb8-4a60-8520-2f03207f6643" />
+  <img width="514" height="219" alt="image" src="https://github.com/user-attachments/assets/995878ae-a69e-4538-b233-556ebe44465d" />
+
 
  
-  ### Project 5 Challenges and Resolutions
+### Project 5 Challenges and Resolutions
   - **Challenge**: Client hardening with Windows updates required
-  - **Resolution**: Initially established VM in a bridged network configuration and proceeded with hardening, then went back to update the VM network configuration to share the same LAN segment as the domain controllers. 
+  - **Resolution**: Initially established VM in a bridged network configuration and proceeded with hardening, then went back to update the VM network configuration to share the same LAN segment as the domain controllers.
+
+## Project 6: DHCP Deployment / DHCP Failover Implementation 
+- **Status**: In Progress
+- **Steps Taken**:
+  - [x] DHCP installed on both domain controllers (domainControl and replicaControl)
+  - [x] Confirmed DHCP was authorized in Active Directory
+  <img width="336" height="99" alt="image" src="https://github.com/user-attachments/assets/e533d39b-e59a-4e8e-9ca7-c9a882188e84" />
+
+  - [x] Used the New Scope Wizard to set a range of IPv4 addresses on the original domain controller
+  <img width="487" height="127" alt="image" src="https://github.com/user-attachments/assets/4afc166e-c275-4aff-8bfc-61683a0c882a" />
+
+  - [x] Specified both domain controllers' IPv4 addresses for client DNS name resolution on the original domain controller
+  - [x] Confirmed new scope and IPv4 address pool on the original domain controller
+  <img width="580" height="76" alt="image" src="https://github.com/user-attachments/assets/fedd8918-1db0-4243-a770-f0a78867ae3f" />
+
+  <img width="544" height="96" alt="image" src="https://github.com/user-attachments/assets/a2b62c23-600e-4fd2-ad27-01743f32becd" />
+
+  - [x] Selected the replica domain controller (replicaControl) as the partner server in the Configure Failover Wizard
+  <img width="497" height="55" alt="image" src="https://github.com/user-attachments/assets/a6cea7e0-cabe-429a-8de4-51da16264bc3" />
+
+  - [x] Set the relationship name and mode to Load Balance
+  <img width="496" height="163" alt="image" src="https://github.com/user-attachments/assets/9ca3f4f1-6aec-4960-a5b4-acffa14be8fc" />
+
+  - [x] Updated the IPv4 properties to obtain an IP address automatically on the bootstrapped client
+  - [x] Used `ipconfig /renew` to initiate and confirm a dynamic allocation from the established scope 
+   <img width="621" height="279" alt="image" src="https://github.com/user-attachments/assets/8b59c133-6fcf-4b64-9d5e-d79e62b517a7" />
+
+  - [x] Verified in both domain controllers' DHCP manager that an address was leased
+  <img width="496" height="59" alt="image" src="https://github.com/user-attachments/assets/70bb5e80-2f6b-4a46-94f3-2e21c36f8875" />
+        
+  <img width="493" height="58" alt="image" src="https://github.com/user-attachments/assets/72501de0-6155-4a30-9063-4d03c0fb3727" />
+
+
+  
+
+
+
+  
