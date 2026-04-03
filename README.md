@@ -91,7 +91,7 @@ Establish a professional server environment for personal learning.
   - **Resolution**: Initially established VM in a bridged network configuration and proceeded with hardening, then went back to update the VM network configuration to share the same LAN segment as the domain controllers.
 
 ## Project 6: DHCP Deployment / DHCP Failover Implementation 
-- **Status**: In Progress
+- **Status**: Complete
 - **Steps Taken**:
   - [x] DHCP installed on both domain controllers (domainControl and replicaControl)
   - [x] Confirmed DHCP was authorized in Active Directory
@@ -122,8 +122,14 @@ Establish a professional server environment for personal learning.
   <img width="493" height="58" alt="image" src="https://github.com/user-attachments/assets/72501de0-6155-4a30-9063-4d03c0fb3727" />
 
 
-  
-
+  ## Project 7: Basic GPO and OU Implementation
+  - **Status**: In Progress
+  - **Steps Taken**:
+    - Goal 1: Automate Administrative Control
+    - Status: GPO Established (Pending Member Server)
+    - [x] Created a new GPO in the Group Poicy Management wizard titled Local-Admins
+    - [x] Edited Local-Admin and added a new group titled Administrators to the Restricted Groups Policy with Administrator as the member
+    - [ ] 
 
 
   
