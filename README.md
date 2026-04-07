@@ -129,7 +129,13 @@ Establish a professional server environment for personal learning.
     - Status: GPO Established (Pending Member Server)
     - [x] Created a new GPO in the Group Poicy Management wizard titled Local-Admins
     - [x] Edited Local-Admin and added a new group titled Administrators to the Restricted Groups Policy with Administrator as the member
-    - [ ] 
+    - Goal 2: Password policy hardening
+    - [x] Domain's password policy updated by setting minimum password length to 12 characters
+    - [x] Insured password must meet complexity requirements was enabled
+    - [x] Updated maximum password age to 90 days
+    - Goal 3: Centralized Policies Store
+    - [x] Copied local PolicyDefinitions folder to \\YourDomain.com\SYSVOL\YourDomain.com\Policies to create a shared reserve for policies
+    - [x] Added a compressed PolicyDefinitions backup copy and titled it as such  
 
 
   
