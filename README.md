@@ -125,17 +125,27 @@ Establish a professional server environment for personal learning.
   ## Project 7: Basic GPO and OU Implementation
   - **Status**: In Progress
   - **Steps Taken**:
-    - Goal 1: Automate Administrative Control
-    - Status: GPO Established (Pending Member Server)
-    - [x] Created a new GPO in the Group Poicy Management wizard titled Local-Admins
+    - **Goal 1**: Automate Administrative Control
+    - **Status**: GPO Established (Pending Member Server)
+    - [x] Created a new GPO in the Group Policy Management wizard titled Local-Admins within the Lab Servers OU
     - [x] Edited Local-Admin and added a new group titled Administrators to the Restricted Groups Policy with Administrator as the member
-    - Goal 2: Password policy hardening
+
+     - **Goal 2**: Password policy hardening
     - [x] Domain's password policy updated by setting minimum password length to 12 characters
     - [x] Insured password must meet complexity requirements was enabled
     - [x] Updated maximum password age to 90 days
-    - Goal 3: Centralized Policies Store
+
+     - **Goal 3**: Centralized Policies Store
     - [x] Copied local PolicyDefinitions folder to \\YourDomain.com\SYSVOL\YourDomain.com\Policies to create a shared reserve for policies
     - [x] Added a compressed PolicyDefinitions backup copy and titled it as such  
 
+     - **Goal 4**: Attack Vector Reduction (Disabling Print Spooler Service)
+    - [x] Created a new GPO using the Group Policy Management wizard titled Disable-Print-Spooler within the Domain Controllers OU
+    - [x] Navigated to System Services in the Group Policy Management Editor Defined the Print Spooler service policy as disabled
+    - [x] To harden further the Allow Print Spooler to accept client connections in the Printers Administrative Template was configured to disabled
+    - [x] Forced a policy update with `gpupdate /force` and verified in the Services wizard that Print Spooler wasn't running and it's Startup Type is Disabled
+    <img width="766" height="75" alt="image" src="https://github.com/user-attachments/assets/44c42567-624c-4e23-8784-fc3e96acfb12" />
+
+     - **Goal 5**: 
 
   
