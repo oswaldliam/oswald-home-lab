@@ -139,13 +139,20 @@ Establish a professional server environment for personal learning.
     - [x] Copied local PolicyDefinitions folder to \\YourDomain.com\SYSVOL\YourDomain.com\Policies to create a shared reserve for policies
     - [x] Added a compressed PolicyDefinitions backup copy and titled it as such  
 
-     - **Goal 4**: Attack Vector Reduction (Disabling Print Spooler Service)
+     - **Goal 4**: An Attack Vector Reduction (Disabling Print Spooler Service)
     - [x] Created a new GPO using the Group Policy Management wizard titled Disable-Print-Spooler within the Domain Controllers OU
     - [x] Navigated to System Services in the Group Policy Management Editor Defined the Print Spooler service policy as disabled
     - [x] To harden further the Allow Print Spooler to accept client connections in the Printers Administrative Template was configured to disabled
     - [x] Forced a policy update with `gpupdate /force` and verified in the Services wizard that Print Spooler wasn't running and it's Startup Type is Disabled
     <img width="766" height="75" alt="image" src="https://github.com/user-attachments/assets/44c42567-624c-4e23-8784-fc3e96acfb12" />
 
-     - **Goal 5**: 
+     - **Goal 5**: Interactive Logon Message 
+     - [x] Created a new GPO using the Group Policy Management wizard titled Computer-Notice within the Lab Computers OU
+     - [x] Navigated to Local Policies' Security Options and defined a Interactive logon title and Interactive logon text
+     - [x] Verified by logging on to the client VM (contained in the Lab Computers OU)
+    <img width="500" height="225" alt="image" src="https://github.com/user-attachments/assets/1aed76d7-08fb-41c8-8144-3eaaf265396c" />
+
+     - **Goal 6**: 
+
 
   
