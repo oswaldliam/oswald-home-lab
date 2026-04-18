@@ -152,7 +152,22 @@ Establish a professional server environment for personal learning.
      - [x] Verified by logging on to the client VM (contained in the Lab Computers OU)
     <img width="500" height="225" alt="image" src="https://github.com/user-attachments/assets/1aed76d7-08fb-41c8-8144-3eaaf265396c" />
 
-     - **Goal 6**: 
+     - **Goal 6**: Implementing Child OU and Firewall Hardening and Monitoring
+     - [x] For more specified GPO application a new child OU was created (Lab Workstations) within the Lab Computers OU
+     - [x] homelabclient machine was moved to the Lab Workstations OU 
+     - [x] Created a new GPO using the Group Policy Management wizard titled Base-Firewall within the new Lab Workstations OU
+     - [x] Edited this GPO and navigated to Windows Defender Firewall with Advanced Security within Computer Configuration's Security Settings
+     - [x] Used the properties wizard to define the Firewall state: On, Inbound Connections: Block, and Outbound Connections: Allow for the domain, private, and public profiles
+     - [x] For further hardening all profiles' have the Apply local firewall rules setting set to No
+     - [x] Navigated to the Microsoft Defender Antivirus' Real-time Protection within Administrative Templates
+     - [x] Enabled the following monitoring policies: Turn on behavior monitoring, Scan all downloaded files and attachments, Turn on script scanning, Monitor file and program activity on your computer
+     - [x] Navigated to the Microsoft Defender Antivirus within Administrative Templates to disable the setting: Turn off Microsoft Defender Antivirus. In order to further reduce attack vectors
+     - [x] Verified on homelabclient machine with `gpresult /r /scope computer` that the Base-Firewall GPO was applied
+    <img width="353" height="119" alt="image" src="https://github.com/user-attachments/assets/b4c93638-b294-4886-88aa-8cec54630b7c" />
+
+     - **Goal 7**:
+    
+
 
 
   
