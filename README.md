@@ -165,7 +165,22 @@ Establish a professional server environment for personal learning.
      - [x] Verified on homelabclient machine with `gpresult /r /scope computer` that the Base-Firewall GPO was applied
     <img width="353" height="119" alt="image" src="https://github.com/user-attachments/assets/b4c93638-b294-4886-88aa-8cec54630b7c" />
 
-     - **Goal 7**:
+     - **Goal 7**: Event Log Management and Auditing
+     - [x] Created a new GPO using the Group Policy Management wizard titled Base-Eventlog-Management within the homelabad.lab.local domain
+     - [x] Edited the GPO and navigated to Event Log Service in Administrative Templates to enable and define the Specify the maximum log file size (KB) policy for Application, Security, and System
+     - [x] Defined the policy option Maximum Log Size (KB) to 102400 KB (100MB) for all three
+     - [x] For easy of use in the homelab the Control Event Log behavior when the log reaches its maximum size was disabled for Application, Security, and System to allow for new events to overwrite old when maximum size is reached
+     - [x] Navigated to Advanced Audit Policy Configuration to define the Audit Events
+     - [x] Defined audit events for successful or failed Credential Validation, File System (changes), and Policy Change. Due to Windows not generating failure events for Security State Change this audit event was only set for successful
+     - [x] Forced a policy update with `gpresult /force` and after the conflict resolution (noted below) verified in the Event Viewer that the policy was active
+    <img width="382" height="243" alt="image" src="https://github.com/user-attachments/assets/fd07587a-359a-4929-9836-c85bf09d25a3" />
+
+     - [x] Verified auditing policy by filtering a search for Event ID 4719 in Event Viewer
+    <img width="656" height="81" alt="image" src="https://github.com/user-attachments/assets/64f90c1c-512d-42e3-bc86-3c680e91034e" />
+
+       
+     - **Conflict**: Event Viewer was not displaying the maximum file size set in the GPO
+     - **Resolution**: Research led to understanding this was a known visual bug. A restart of the machine caused the value displayed in Event Viewer to match what was set in the GPO
     
 
 
