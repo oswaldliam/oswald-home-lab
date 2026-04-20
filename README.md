@@ -182,7 +182,14 @@ Establish a professional server environment for personal learning.
      - **Conflict**: Event Viewer was not displaying the maximum file size set in the GPO
      - **Resolution**: Research led to understanding this was a known visual bug. A restart of the machine caused the value displayed in Event Viewer to match what was set in the GPO
     
+     - **Goal 8**: Initializing a Drive and Folder Redirection
+     - [x] Allocated 20 GB to a new NVMe Hard Disk on domainControl
+     - [x] Chose GPT when initializing the new disk space in Disk Managment
+     - [x] Used the New Simple Volume Wizard for the new unallocated space; designated E: for the drive path, selected NTFS formating and titled the space Lab Data
+     <img width="737" height="207" alt="image" src="https://github.com/user-attachments/assets/9c95b500-11bf-42f3-b5bc-f2d01747027b" />
 
+     
+     - [ ] 
 
 
   
